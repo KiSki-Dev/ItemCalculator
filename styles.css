@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .container {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  #dropdown-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  #result-selected-container {
+    display: flex;
+  }
+  
+  #selected-container,
+  #result-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #selected-container {
+    height: 63vh;
+    margin-right: 20px;
+  }
+  
+  #result-container {
+    height: 100px;
+  }
+  
+  #ergebnis {
+    text-align: center;
+  }
+  
+  select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  #selected-objects li {
+    margin-bottom: 5px;
+    list-style-type: none;
+  }
+  
+  #selected-objects li input {
+    width: 40px; /* Breite des Eingabefeldes für die Menge */
+  }
+  
+  #selected-objects li button {
+    margin-left: 5px;
+    padding: 4px 8px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
