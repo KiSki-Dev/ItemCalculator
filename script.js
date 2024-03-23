@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Lade die Objekte von der API
-  fetch('https://api.npoint.io/47e0fcf21a87f4fba65a')
+  fetch('https://api.npoint.io/347a265a6612436107b3')
     .then(response => response.json())
     .then(data => {
       // Erzeuge das Dropdown-Menü für die Objekte
@@ -88,5 +88,5 @@ function berechne() {
   selectedObjects.forEach(function(obj) {
     summe += obj.value * obj.quantity; // Multipliziere den Wert mit der Menge
   });
-  document.getElementById('ergebnis').innerText = 'Die Summe beträgt: ' + summe;
+  document.getElementById('ergebnis').innerText = summe;
 }
