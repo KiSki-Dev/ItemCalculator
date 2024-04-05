@@ -1,46 +1,18 @@
 [
     {
-      "name": "Bandage",
-      "value": 60
+      "name": "Apple",
+      "value": 120
     },
     {
-      "name": "Elastische Bandage",
-      "value": 60
+      "name": "Beer",
+      "value": 220
     },
     {
-      "name": "Wundschnellverband",
-      "value": 55
+      "name": "Car",
+      "value": 1600
     },
     {
-      "name": "Tourniquet",
-      "value": 40
-    },
-    {
-      "name": "Morphin",
-      "value": 150
-    },
-    {
-      "name": "Adrenalin",
-      "value": 130
-    },
-    {
-      "name": "Schmerzmittel",
-      "value": 150
-    },
-    {
-      "name": "Fentanyl",
-      "value": 130
-    },
-    {
-      "name": "Propofol",
-      "value": 100
-    },
-    {
-      "name": "Blut 500ml",
-      "value": 330
-    },
-    {
-      "name": "10x Blüten",
-      "value": 3000
+      "name": "House",
+      "value": 5000
     }
-  ]
+]

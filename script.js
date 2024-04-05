@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.toggle('dark-mode');
   });
 
-  fetch('https://api.npoint.io/347a265a6612436107b3')
+  fetch('https://api.npoint.io/5808aae7b8a1ad7301f4')
     .then(response => response.json())
     .then(data => {
       var select = document.createElement('select');
