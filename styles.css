@@ -6,14 +6,80 @@ body {
 }
 
 header {
-  background-color: #007bff;
+  background-color: #8A2BE2; /* Lila Hintergrundfarbe */
   color: #fff;
-  padding: 20px 0;
-  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#github-link {
+  padding: 0 20px; /* Füge etwas seitlichen Abstand hinzu */
+}
+
+#dark-mode-toggle {
+  margin-left: auto;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#dark-mode-toggle img {
+  width: 32px;
+  height: auto;
 }
 
 h1 {
   margin: 0;
+}
+
+/* Dunkler Modus-Stil */
+
+.dark-mode {
+  background-color: #222; /* Dunkler Hintergrund */
+  color: #fff; /* Weiße Schriftfarbe */
+}
+
+.dark-mode header {
+  background-color: #4B0082; /* Dunkles Lila für den Header im Dark Mode */
+}
+
+.dark-mode .container {
+  background-color: #333; /* Dunkler Hintergrund für den Container im Dark Mode */
+}
+
+.dark-mode #dropdown-container,
+.dark-mode #selected-container,
+.dark-mode #details-container,
+.dark-mode #result-container {
+  background-color: #444; /* Dunkler Hintergrund für die Divs im Dark Mode */
+}
+
+.dark-mode input[type="text"].quantity-input,
+.dark-mode #details-dropdown,
+.dark-mode select {
+  font-weight: bold;
+  background-color: #888888; /* Dunkler Hintergrund für Quantity Input und Dropdown-Menüs im Dark Mode */
+  color: #fff;
+}
+
+.dark-mode #ergebnis {
+  color: #3a73ec; /* Helles Blau für das Ergebnis im Dark Mode */
+}
+
+/* Aktualisierte CSS-Stile für den Dark Mode-Button */
+#dark-mode-toggle {
+  border: none;
+  background: none; /* Hintergrund entfernen */
+  padding: 0;
+  cursor: pointer;
+}
+
+#dark-mode-toggle img {
+  width: 50px; /* Ändere die Breite des Icons nach Bedarf */
+  height: 50px; /* Behalte das Seitenverhältnis bei */
 }
 
 .container {
@@ -42,6 +108,7 @@ h2 {
 }
 
 #selected-container,
+#details-container,
 #result-container {
   flex: 1;
   padding: 20px;
@@ -58,14 +125,52 @@ h2 {
   margin-right: 20px;
 }
 
+#details-container,
 #result-container {
+  margin-top: 45px;
+  font-weight: bold;
+  font-size: 24px;
   text-align: center;
-  height: 100px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#details-container {
+  margin-left: -20px;
+  flex: 1;
+  margin-top: 110px;
+  width: 100%;
+}
+
+#details-container {
+  font-size: 28px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#details-container h2 {
+  margin-top: 0;
+}
+
+#details-dropdown {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
 }
 
 #ergebnis {
   font-weight: bold;
-  font-size: 36px;
+  font-size: 50px;
   color: #460fc5;
   text-align: center;
 }

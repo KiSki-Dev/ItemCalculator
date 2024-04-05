@@ -9,6 +9,8 @@
 <body>
   <header>
     <h1>Objekt-Rechner</h1>
+    <button id="dark-mode-toggle"><img src="https://img.icons8.com/ios-filled/50/day-and-night.png" alt="Dark Mode Toggle"></button>
+    <a id="github-link" href="https://github.com/KiSki-Dev/ItemCalculator" target="_blank"><img src="https://img.icons8.com/glyph-neue/50/github.png" alt="GitHub"></a>
   </header>
   <div class="container">
     <div id="dropdown-container">
@@ -21,8 +23,19 @@
         <ul id="selected-objects"></ul>
       </div>
       <div id="result-container">
-        <h2>Ergebnis</h2>
-        <div id="ergebnis"></div>
+        <div id="ergebnis-container">
+          <h2>Ergebnis</h2>
+          <div id="ergebnis"></div>
+        </div>
+        <div id="details-container">
+          <h2>Multiplizieren</h2>
+          <select id="details-dropdown">
+            <option value="1">1x</option>
+            <option value="2">2x</option>
+            <option value="5">5x</option>
+            <option value="10">10x</option>
+          </select>
+        </div>
       </div>
     </div>
   </div>

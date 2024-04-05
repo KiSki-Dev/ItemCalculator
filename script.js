@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Dark Mode-Button
+  var darkModeToggle = document.getElementById('dark-mode-toggle');
+
+  // Event-Listener für den Dark Mode-Button
+  darkModeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode'); // Wechselt zwischen Dark Mode und Light Mode
+  });
+
   // Lade die Objekte von der API
   fetch('https://api.npoint.io/347a265a6612436107b3')
     .then(response => response.json())
@@ -31,6 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
+
+  // Event-Listener für Änderungen am Dropdown-Menü für den Multiplikator
+  document.getElementById('details-dropdown').addEventListener('change', function() {
+    berechne(); // Neu berechnen, wenn der Multiplikator geändert wird
+  });
 });
 
 var selectedObjects = [];
@@ -82,11 +95,15 @@ function updateSelectedObjectsList() {
   });
 }
 
-
 function berechne() {
   var summe = 0;
+  var multiplier = parseInt(document.getElementById('details-dropdown').value);
   selectedObjects.forEach(function(obj) {
-    summe += obj.value * obj.quantity; // Multipliziere den Wert mit der Menge
+    summe += obj.value * obj.quantity * multiplier; // Multipliziere den Wert mit der Menge und dem ausgewählten Multiplikator
   });
   document.getElementById('ergebnis').innerText = summe;
 }
+
+// Initialberechnung beim Laden der Seite
+berechne();
+document.body.classList.toggle('dark-mode');
