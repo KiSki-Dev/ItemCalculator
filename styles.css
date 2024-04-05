@@ -12,6 +12,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 #github-link {
@@ -96,6 +98,8 @@ h2 {
 }
 
 #dropdown-container {
+  font-weight: bold;
+  font-size: 20px;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 8px;
@@ -121,7 +125,7 @@ h2 {
   text-align: center;
   font-weight: bold;
   font-size: 36px;
-  height: 63vh;
+  height: 61.5vh;
   margin-right: 20px;
 }
 
@@ -224,4 +228,22 @@ select {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+
+#clear-all-container {
+  display: flex;
+  align-items: center; /* Zentriere das Bild vertikal */
+  justify-content: flex-end; /* Positioniere das Bild ganz rechts */
+  margin-right: 16px;
+}
+
+#clear-all-button {
+  width: 76px; /* Passe die Breite des Bildes an */
+  height: 76px; /* Behalte das Seitenverhältnis bei */
+  cursor: pointer; /* Ändere den Mauszeiger, um anzuzeigen, dass es klickbar ist */
+}
+
+#selected-container h2 {
+  display: inline; /* Lässt den Text und den Button inline erscheinen */
 }

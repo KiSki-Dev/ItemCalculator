@@ -44,6 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('details-dropdown').addEventListener('change', function() {
     berechne(); // Neu berechnen, wenn der Multiplikator geändert wird
   });
+
+  // Event-Listener für den Clear All-Button
+  document.getElementById('clear-all-button').addEventListener('click', function() {
+    selectedObjects = []; // Leere die Liste der ausgewählten Objekte
+    updateSelectedObjectsList(); // Aktualisiere die Anzeige der ausgewählten Objekte
+    berechne(); // Berechne das Ergebnis neu
+  });
 });
 
 var selectedObjects = [];
@@ -78,9 +85,13 @@ function updateSelectedObjectsList() {
     quantityInput.classList.add('quantity-input'); // Füge die Klasse hinzu
     quantityInput.addEventListener('input', function() {
       var newQuantity = parseInt(quantityInput.value);
-      if (!isNaN(newQuantity) && newQuantity >= 1) {
-        selectedObjects[index].quantity = newQuantity;
-        berechne();
+      if (!isNaN(newQuantity) && newQuantity >= 0) {
+        if (newQuantity === 0) {
+          removeSelectedObject(index); // Element entfernen, wenn die Menge auf 0 gesetzt wird
+        } else {
+          selectedObjects[index].quantity = newQuantity;
+          berechne();
+        }
       }
     });
     listItem.appendChild(quantityInput);
