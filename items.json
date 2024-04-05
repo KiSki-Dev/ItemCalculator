@@ -1,5 +1,46 @@
 [
-    {"name": "Objekt 1", "value": 1570},
-    {"name": "Objekt 2", "value": 58180},
-    {"name": "Objekt 3", "value": 4581}
-]
+    {
+      "name": "Bandage",
+      "value": 60
+    },
+    {
+      "name": "Elastische Bandage",
+      "value": 60
+    },
+    {
+      "name": "Wundschnellverband",
+      "value": 55
+    },
+    {
+      "name": "Tourniquet",
+      "value": 40
+    },
+    {
+      "name": "Morphin",
+      "value": 150
+    },
+    {
+      "name": "Adrenalin",
+      "value": 130
+    },
+    {
+      "name": "Schmerzmittel",
+      "value": 150
+    },
+    {
+      "name": "Fentanyl",
+      "value": 130
+    },
+    {
+      "name": "Propofol",
+      "value": 100
+    },
+    {
+      "name": "Blut 500ml",
+      "value": 330
+    },
+    {
+      "name": "10x Blüten",
+      "value": 3000
+    }
+  ]

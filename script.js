@@ -1,20 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Dark Mode-Button
   var darkModeToggle = document.getElementById('dark-mode-toggle');
 
-  // Event-Listener für den Dark Mode-Button
   darkModeToggle.addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode'); // Wechselt zwischen Dark Mode und Light Mode
+    document.body.classList.toggle('dark-mode');
   });
 
-  // Lade die Objekte von der API
   fetch('https://api.npoint.io/347a265a6612436107b3')
     .then(response => response.json())
     .then(data => {
-      // Erzeuge das Dropdown-Menü für die Objekte
       var select = document.createElement('select');
       var defaultOption = document.createElement('option');
-      defaultOption.text = 'Bitte wählen';
+      defaultOption.text = 'Select';
       select.add(defaultOption);
       
       data.forEach(function(item) {
@@ -24,45 +20,40 @@ document.addEventListener('DOMContentLoaded', function() {
         select.add(option);
       });
       
-      // Füge das Dropdown-Menü zur Seite hinzu
       var itemsDiv = document.getElementById('items');
       itemsDiv.appendChild(select);
       
-      // Füge den Event-Listener für die Auswahl des Dropdown-Menüs hinzu
       select.addEventListener('change', function() {
         var selectedOption = select.options[select.selectedIndex];
         if (selectedOption.value !== '') {
           addSelectedObject(selectedOption.text, parseInt(selectedOption.value));
-          berechne();
-          // Setze das Dropdown-Menü zurück
+          calculate();
           select.selectedIndex = 0;
         }
       });
+    })
+    .catch(error => {
+      console.error('Error loading items:', error);
     });
 
-  // Event-Listener für Änderungen am Dropdown-Menü für den Multiplikator
   document.getElementById('details-dropdown').addEventListener('change', function() {
-    berechne(); // Neu berechnen, wenn der Multiplikator geändert wird
+    calculate();
   });
 
-  // Event-Listener für den Clear All-Button
   document.getElementById('clear-all-button').addEventListener('click', function() {
-    selectedObjects = []; // Leere die Liste der ausgewählten Objekte
-    updateSelectedObjectsList(); // Aktualisiere die Anzeige der ausgewählten Objekte
-    berechne(); // Berechne das Ergebnis neu
+    selectedObjects = [];
+    updateSelectedObjectsList();
+    calculate();
   });
 });
 
 var selectedObjects = [];
 
 function addSelectedObject(name, value) {
-  // Prüfe, ob das Objekt bereits ausgewählt wurde
   var existingObjectIndex = selectedObjects.findIndex(obj => obj.name === name);
   if (existingObjectIndex !== -1) {
-    // Wenn das Objekt bereits ausgewählt wurde, erhöhe die Menge
     selectedObjects[existingObjectIndex].quantity++;
   } else {
-    // Wenn das Objekt zum ersten Mal ausgewählt wird, füge es mit einer Menge von 1 hinzu
     selectedObjects.push({name: name, value: value, quantity: 1});
   }
   updateSelectedObjectsList();
@@ -71,7 +62,7 @@ function addSelectedObject(name, value) {
 function removeSelectedObject(index) {
   selectedObjects.splice(index, 1);
   updateSelectedObjectsList();
-  berechne();
+  calculate();
 }
 
 function updateSelectedObjectsList() {
@@ -82,15 +73,15 @@ function updateSelectedObjectsList() {
     var quantityInput = document.createElement('input');
     quantityInput.type = 'text';
     quantityInput.value = obj.quantity;
-    quantityInput.classList.add('quantity-input'); // Füge die Klasse hinzu
+    quantityInput.classList.add('quantity-input');
     quantityInput.addEventListener('input', function() {
       var newQuantity = parseInt(quantityInput.value);
       if (!isNaN(newQuantity) && newQuantity >= 0) {
         if (newQuantity === 0) {
-          removeSelectedObject(index); // Element entfernen, wenn die Menge auf 0 gesetzt wird
+          removeSelectedObject(index);
         } else {
           selectedObjects[index].quantity = newQuantity;
-          berechne();
+          calculate();
         }
       }
     });
@@ -106,15 +97,14 @@ function updateSelectedObjectsList() {
   });
 }
 
-function berechne() {
-  var summe = 0;
+function calculate() {
+  var sum = 0;
   var multiplier = parseInt(document.getElementById('details-dropdown').value);
   selectedObjects.forEach(function(obj) {
-    summe += obj.value * obj.quantity * multiplier; // Multipliziere den Wert mit der Menge und dem ausgewählten Multiplikator
+    sum += obj.value * obj.quantity * multiplier;
   });
-  document.getElementById('ergebnis').innerText = summe;
+  document.getElementById('result').innerText = sum;
 }
 
-// Initialberechnung beim Laden der Seite
-berechne();
+calculate();
 document.body.classList.toggle('dark-mode');

@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  background-color: #8A2BE2; /* Lila Hintergrundfarbe */
+  background-color: #8A2BE2;
   color: #fff;
   padding: 20px;
   display: flex;
@@ -17,7 +17,7 @@ header {
 }
 
 #github-link {
-  padding: 0 20px; /* Füge etwas seitlichen Abstand hinzu */
+  padding: 0 20px;
 }
 
 #dark-mode-toggle {
@@ -37,51 +37,48 @@ h1 {
   margin: 0;
 }
 
-/* Dunkler Modus-Stil */
-
 .dark-mode {
-  background-color: #222; /* Dunkler Hintergrund */
-  color: #fff; /* Weiße Schriftfarbe */
+  background-color: #222;
+  color: #fff;
 }
 
 .dark-mode header {
-  background-color: #4B0082; /* Dunkles Lila für den Header im Dark Mode */
+  background-color: #4B0082;
 }
 
 .dark-mode .container {
-  background-color: #333; /* Dunkler Hintergrund für den Container im Dark Mode */
+  background-color: #333;
 }
 
 .dark-mode #dropdown-container,
 .dark-mode #selected-container,
 .dark-mode #details-container,
 .dark-mode #result-container {
-  background-color: #444; /* Dunkler Hintergrund für die Divs im Dark Mode */
+  background-color: #444;
 }
 
 .dark-mode input[type="text"].quantity-input,
 .dark-mode #details-dropdown,
 .dark-mode select {
   font-weight: bold;
-  background-color: #888888; /* Dunkler Hintergrund für Quantity Input und Dropdown-Menüs im Dark Mode */
+  background-color: #888888;
   color: #fff;
 }
 
-.dark-mode #ergebnis {
-  color: #3a73ec; /* Helles Blau für das Ergebnis im Dark Mode */
+.dark-mode #result {
+  color: #3a73ec;
 }
 
-/* Aktualisierte CSS-Stile für den Dark Mode-Button */
 #dark-mode-toggle {
   border: none;
-  background: none; /* Hintergrund entfernen */
+  background: none;
   padding: 0;
   cursor: pointer;
 }
 
 #dark-mode-toggle img {
-  width: 50px; /* Ändere die Breite des Icons nach Bedarf */
-  height: 50px; /* Behalte das Seitenverhältnis bei */
+  width: 50px;
+  height: auto;
 }
 
 .container {
@@ -140,7 +137,6 @@ h2 {
   flex-direction: column;
 }
 
-
 #details-container {
   margin-left: -20px;
   flex: 1;
@@ -172,7 +168,7 @@ h2 {
   background-color: #fff;
 }
 
-#ergebnis {
+#result {
   font-weight: bold;
   font-size: 50px;
   color: #460fc5;
@@ -203,21 +199,21 @@ select {
 }
 
 #selected-objects li {
-  display: flex; /* Stelle die Elemente in einer Zeile an */
-  align-items: center; /* Zentriere die Elemente vertikal */
-  justify-content: space-between; /* Platzieren Sie die Elemente gleichmäßig entlang der Zeile */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-weight: bold;
   font-size: 24px;
   margin-top: 25px;
   margin-right: 5px;
   margin-left: 5px;
   list-style-type: none;
-  padding-right: 20px; /* Fügen Sie rechts zusätzlichen Platz hinzu */
+  padding-right: 20px;
 }
 
 #selected-objects li input {
-  width: 40px; /* Breite des Eingabefeldes für die Menge */
-  margin-left: 10px; /* Fügen Sie links zusätzlichen Platz hinzu */
+  width: 40px;
+  margin-left: 10px;
 }
 
 #selected-objects li button {
@@ -230,20 +226,19 @@ select {
   cursor: pointer;
 }
 
-
 #clear-all-container {
   display: flex;
-  align-items: center; /* Zentriere das Bild vertikal */
-  justify-content: flex-end; /* Positioniere das Bild ganz rechts */
+  align-items: center;
+  justify-content: flex-end;
   margin-right: 16px;
 }
 
 #clear-all-button {
-  width: 76px; /* Passe die Breite des Bildes an */
-  height: 76px; /* Behalte das Seitenverhältnis bei */
-  cursor: pointer; /* Ändere den Mauszeiger, um anzuzeigen, dass es klickbar ist */
+  width: 76px;
+  height: 76px;
+  cursor: pointer;
 }
 
 #selected-container h2 {
-  display: inline; /* Lässt den Text und den Button inline erscheinen */
+  display: inline;
 }
